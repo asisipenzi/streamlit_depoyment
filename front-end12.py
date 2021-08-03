@@ -6,7 +6,6 @@ from keras.models import Model, Sequential, load_model
 from pprint import pprint
 import os 
 
-
 header = st.beta_container()
 dataset = st.beta_container()
 features = st.beta_container()
@@ -18,10 +17,22 @@ if os.path.exists:
 
     final_model = pickle.load(open('data/final_nn_pickle.pkl', "rb"))
     food_model = final_model["best_model"]
+else:
 
-#with open('data/final_nn_pickle.pkl', "rb") as file:
- #   pickle.dump(file)
-#print("finishing training new  model...")
+column_trans = make_column_transfomer(
+    (OneHotEncoder(), ['incident_city']), remainder='passthrough'
+)
+
+clf = IsolationForest(behaviour='deprecated', bootstrap=false,contamination=0.009),max_features=1.0, max_samples='auto', n_estimators=100,
+    n_jobs=None, random_state=None, verbose=0, warm_start=False)
+
+pipe = make_pipeline(column_trans, clf)
+
+pipe.fit(X,y)
+
+with open('data/final_nn_pickle.pkl', "rb") as file:
+    pickle.dump(pipe, file)
+print("finishing training new  model...")
 
 
 
