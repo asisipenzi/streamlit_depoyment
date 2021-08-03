@@ -2,10 +2,8 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
-# from tensorflow.keras.models import Sequential
 from keras.models import Model, Sequential, load_model
-# from fileinput import filename
-
+from pprint import pprint
 
 header = st.beta_container()
 dataset = st.beta_container()
@@ -13,10 +11,14 @@ features = st.beta_container()
 modelTraining = st.beta_container()
 
 
+
 final_model = pickle.load(open('data/final_nn_pickle.pkl', "rb"))
 food_model = final_model["best_model"]
+
+
+
 print('----------------------------------------')
-print(food_model)
+pprint(food_model)
 print('----------------------------------------')
 
 def get_data(filename):
