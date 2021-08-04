@@ -18,6 +18,16 @@ features = st.beta_container()
 modelTraining = st.beta_container()
 
 
+class L2{
+    static className ='L2';
+
+    constructor(config) {
+        return tf.regularizers.l1l2(config)
+    }
+}
+
+tf.serialization.registerClass(L2)
+
 
 if os.path.exists:
     # final_model = pickle.load(open('data/final_nn_pickle.pkl', "rb"))
