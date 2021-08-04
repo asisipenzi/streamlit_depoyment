@@ -21,8 +21,8 @@ modelTraining = st.beta_container()
 
 if os.path.exists:
     final_model = pickle.load(open('data/final_nn_pickle.pkl', "rb"))
-    food_model = final_model
-    
+    food_model = final_model["best_model"]
+
 #with open('data/final_nn_pickle.pkl', "rb") as file:
  #   pickle.dump(file)
 #print("finishing training new  model...")
