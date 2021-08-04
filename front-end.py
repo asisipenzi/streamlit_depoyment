@@ -2,10 +2,13 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
+import tensorflow as tf
+import tensorflow.keras as keras
+
 from keras.models import Model
 from keras.models import Sequential
 from keras.models import load_model
-from pprint import pprint
+# from pprint import pprint
 import os 
 
 
@@ -27,7 +30,7 @@ if os.path.exists:
 
 
 print('----------------------------------------')
-pprint(food_model)
+# pprint(food_model)
 print('----------------------------------------')
 
 def get_data(filename):
