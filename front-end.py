@@ -25,7 +25,7 @@ modelTraining = st.beta_container()
  # }
 #}
 
-# tf.serialization.registerClass(L2)
+# tf.serializ ation.registerClass(L2)
 
 
 if os.path.exists:
