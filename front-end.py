@@ -22,9 +22,7 @@ modelTraining = st.beta_container()
 if os.path.exists:
     # final_model = pickle.load(open('data/final_nn_pickle.pkl', "rb"))
     #   final_model = pickle.load(open('data/model_1.h5', "rb"))
-      final_model = load_model('data/model_1.h5', 
-                    custom_objects=None, 
-                    compile=True)
+      final_model = load_model('data/model_1.h5')
  
       food_model = final_model["best_model"]
 
