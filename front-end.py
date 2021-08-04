@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
-from tensorflow.keras.models import Model, Sequential, load_model
+from keras.models import Model, Sequential, load_model
 from pprint import pprint
 import os 
 
